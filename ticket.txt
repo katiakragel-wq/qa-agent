@@ -1,0 +1,10 @@
+Ticket-1: Login with email and password
+
+As a registered user, I want to log in with my email and password so that I can access my account.
+
+Acceptance criteria:
+- User can log in with a valid email and password
+- After 5 failed attempts the account is locked for 15 minutes
+- An error message is shown for invalid credentials, without revealing which field is wrong
+- The "Remember me" checkbox keeps the user logged in for 30 days
+- Password field masks input
