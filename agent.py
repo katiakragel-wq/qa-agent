@@ -29,11 +29,14 @@ TASKS = {
     "testcases": (
         "Read the ticket from ticket.txt. Number its acceptance criteria AC1, AC2, ... "
         "in the order they appear in the ticket. Then write test cases for it as a markdown table "
-        "with columns: ID, Title, Preconditions, Steps, Expected result, Type "
-        "(positive / negative / boundary), Covers. "
-        "In the Covers column put the acceptance criterion the case checks (for example AC2), "
-        "or 'extra' if the case checks something the ticket does not mention. "
-        "Make sure every acceptance criterion has at least one test case. Write in English."
+        "with exactly these columns: ID, Title, Preconditions, Steps, Expected result, Type, Covers.\n"
+        "Rules:\n"
+        "- Type must be exactly one of: positive, negative, boundary. Never write 'extra' in Type.\n"
+        "- Covers must be the acceptance criterion the case checks (AC1 to AC5), "
+        "or 'extra' if the case checks something the ticket does not mention.\n"
+        "- Every acceptance criterion must have at least two test cases.\n"
+        "- Also add at least three cases with Covers = extra for edge cases the ticket does not mention (Type must still be positive, negative or boundary).\n"
+        "Write in English."
     ),
 }
 task_name = sys.argv[1] if len(sys.argv) > 1 else "testcases"
