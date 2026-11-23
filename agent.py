@@ -38,7 +38,7 @@ messages = [{"role": "user", "content": TASKS[task_name]}]
 for step in range(5):
     response = client.messages.create(
         model="claude-haiku-5-5",
-        max_tokens=3000,
+        max_tokens=8000,
         tools=tools,
         messages=messages,
     )
@@ -60,6 +60,9 @@ for step in range(5):
             )
     messages.append({"role": "user", "content": tool_results})
 
-for block in response.content:
-    if block.type == "text":
-        print(block.text)
+output_text = "\n".join(b.text for b in response.content if b.type == "text")
+filename = f"output_{task_name}.md"
+with open(filename, "w", encoding="utf-8") as f:
+    f.write(output_text)
+print(f"Saved to {filename}")
+print("stop_reason:", response.stop_reason, "| output tokens:", response.usage.output_tokens)
