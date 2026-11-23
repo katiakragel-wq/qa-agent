@@ -1,5 +1,5 @@
 import anthropic
-
+import sys
 client = anthropic.Anthropic()
 
 
@@ -24,15 +24,21 @@ tools = [
         },
     }
 ]
-
-messages = [
-    {"role": "user", "content": "Прочитай тикет из файла ticket.txt и коротко скажи, о чём он."}
-]
-
+TASKS = {
+    "summary": "Прочитай тикет из файла ticket.txt и коротко скажи, о чём он.",
+    "testcases": (
+        "Read the ticket from ticket.txt. Then write test cases for it as a markdown table "
+        "with columns: ID, Title, Preconditions, Steps, Expected result, Type "
+        "(positive / negative / boundary). Cover every acceptance criterion and add "
+        "edge cases that the ticket does not mention. Write in English."
+    ),
+}
+task_name = sys.argv[1] if len(sys.argv) > 1 else "testcases"
+messages = [{"role": "user", "content": TASKS[task_name]}]
 for step in range(5):
     response = client.messages.create(
         model="claude-haiku-5-5",
-        max_tokens=1000,
+        max_tokens=3000,
         tools=tools,
         messages=messages,
     )
