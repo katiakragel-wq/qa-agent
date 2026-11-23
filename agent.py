@@ -27,10 +27,13 @@ tools = [
 TASKS = {
     "summary": "Прочитай тикет из файла ticket.txt и коротко скажи, о чём он.",
     "testcases": (
-        "Read the ticket from ticket.txt. Then write test cases for it as a markdown table "
+        "Read the ticket from ticket.txt. Number its acceptance criteria AC1, AC2, ... "
+        "in the order they appear in the ticket. Then write test cases for it as a markdown table "
         "with columns: ID, Title, Preconditions, Steps, Expected result, Type "
-        "(positive / negative / boundary). Cover every acceptance criterion and add "
-        "edge cases that the ticket does not mention. Write in English."
+        "(positive / negative / boundary), Covers. "
+        "In the Covers column put the acceptance criterion the case checks (for example AC2), "
+        "or 'extra' if the case checks something the ticket does not mention. "
+        "Make sure every acceptance criterion has at least one test case. Write in English."
     ),
 }
 task_name = sys.argv[1] if len(sys.argv) > 1 else "testcases"
