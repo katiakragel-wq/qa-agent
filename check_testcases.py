@@ -23,6 +23,8 @@ for line in lines:
         continue
     if all(set(c) <= set("-: ") for c in cells):  # строка-разделитель |---|---|
         continue
+    if cells == header:  # повторная шапка во второй таблице
+        continue
     rows.append(cells)
 
 if header is None or "Type" not in header or "Covers" not in header:
@@ -73,3 +75,6 @@ for ac in CRITERIA:
 print(f"Проблем с форматом: {len(problems)}")
 for p in problems:
     print("  -", p)
+passed = not problems and all(coverage[ac] >= 2 for ac in CRITERIA) and extra >= 3
+print("РЕЗУЛЬТАТ:", "PASS" if passed else "FAIL")
+sys.exit(0 if passed else 1)
