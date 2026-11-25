@@ -24,7 +24,7 @@ One ticket (`ticket.txt`, a login feature with 5 acceptance criteria), one promp
 - Run 10 first showed as a failure, but it was a false alarm in my own checker: the model split its answer into two tables, and the repeated header row was counted as a test case. I fixed the checker and re-scored all 10 saved runs with the same rules.
 
 Things I noticed along the way:
-- The number of test cases varies a lot between runs of the same prompt (from about 11 to about 39 in early tests), so one run proves very little.
+- With the final prompt the number of test cases was fairly stable (16 to 18 across the 10 saved runs). Earlier prompt versions gave very different counts (from 11 to 39 in my first tests, which I did not save), so the wording of the prompt mattered more than run-to-run randomness.
 - When I changed the prompt to require at least two cases per criterion, the agent produced only the minimum. Adding the explicit request for extra cases brought them back. Passing a check is not the same as good coverage.
 
 ## Limitations
