@@ -1,0 +1,16 @@
+
+Running 10 tests using 1 worker
+
+  ✓   1 generated/tests/login.spec.ts:5:1 › TC-01: valid credentials log in and open the inventory page (541ms)
+  ✓   2 generated/tests/login.spec.ts:15:1 › TC-02: valid credentials submitted with the Enter key (418ms)
+  ✓   3 generated/tests/login.spec.ts:27:1 › TC-03: valid username with wrong password shows mismatch error (320ms)
+  ✓   4 generated/tests/login.spec.ts:39:1 › TC-04: password with different letter case is rejected (325ms)
+  ✓   5 generated/tests/login.spec.ts:51:1 › TC-05: empty username shows username required error (342ms)
+  ✓   6 generated/tests/login.spec.ts:62:1 › TC-06: both fields empty shows username required error first (294ms)
+  ✓   7 generated/tests/login.spec.ts:72:1 › TC-07: empty password with username shows password required error (375ms)
+  ✓   8 generated/tests/login.spec.ts:83:1 › TC-08: single-character username with empty password shows password required error (372ms)
+  ✓   9 generated/tests/login.spec.ts:94:1 › TC-09: locked-out user sees locked-out message (376ms)
+  -  10 generated/tests/login.spec.ts:109:6 › TC-10: locked-out user has no session after failed login
+
+  1 skipped
+  9 passed (4.5s)
