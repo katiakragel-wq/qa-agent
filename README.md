@@ -24,6 +24,7 @@ Built with Python, the Claude API (tool use), Playwright MCP and Playwright Test
 - The browser agent reported that 9 of the 10 matched the expected result. TC-10 (locked-out user has no session) was not finished: the agent reached the 12-step limit.
 - First test run: **7 passed, 2 failed, 1 skipped**. The two failures (TC-01, TC-02) came from an invented locator: the agent's own report said "match", but the generated code looked for a heading named "Products", while the page snapshot shows plain text. I fixed that one line by hand in `generated/pages/InventoryPage.ts`.
 - After the fix: **9 passed, 1 skipped** (see `test_results.txt`).
+![Playwright HTML Report](docs/playwright-report.png)
 
 What I took from this: the agent's own "match" is not proof. Running the generated tests found a mistake that the agent's report did not show.
 
