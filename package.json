@@ -1,0 +1,24 @@
+{
+  "name": "qa-agent",
+  "version": "1.0.0",
+  "description": "A personal learning project: an AI agent that turns a Jira-style ticket into test cases, plus an automated checker and a small eval runner that measure how reliably the agent follows the required format and coverage rules.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katiakragel-wq/qa-agent.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/katiakragel-wq/qa-agent/issues"
+  },
+  "homepage": "https://github.com/katiakragel-wq/qa-agent#readme",
+  "devDependencies": {
+    "@playwright/test": "1.66.0-alpha-2026-11-09"
+  }
+}

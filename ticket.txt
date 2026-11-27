@@ -1,10 +1,10 @@
-Ticket-1: Login with email and password
+SD-1: Login with username and password
 
-As a registered user, I want to log in with my email and password so that I can access my account.
+As a registered user, I want to log in with my username and password so that I can access the product catalog.
 
 Acceptance criteria:
-- User can log in with a valid email and password
-- After 5 failed attempts the account is locked for 15 minutes
-- An error message is shown for invalid credentials, without revealing which field is wrong
-- The "Remember me" checkbox keeps the user logged in for 30 days
-- Password field masks input
+- A user with valid credentials (standard_user / secret_sauce) is logged in and taken to the inventory page (https://www.saucedemo.com/inventory.html)
+- A valid username with a wrong password stays on the login page and shows "Epic sadface: Username and password do not match any user in this service"
+- An empty username shows "Epic sadface: Username is required"
+- An empty password (with a username entered) shows "Epic sadface: Password is required"
+- The locked-out user (locked_out_user / secret_sauce) cannot log in and sees "Epic sadface: Sorry, this user has been locked out."

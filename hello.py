@@ -6,7 +6,7 @@ response = client.messages.create(
     model="claude-haiku-5-5",
     max_tokens=1000,
     messages=[
-        {"role": "user", "content": "Назови 3 риска, которые нужно проверить при тестировании формы логина."}
+        {"role": "user", "content": "Name 3 risks to check when testing a login form."}
     ],
 )
 

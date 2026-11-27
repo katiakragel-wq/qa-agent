@@ -8,12 +8,12 @@ Path("runs").mkdir(exist_ok=True)
 
 passed = 0
 for i in range(1, N + 1):
-    print(f"Запуск {i}/{N}...", flush=True)
+    print(f"Run {i}/{N}...", flush=True)
     agent = subprocess.run(
         [sys.executable, "agent.py", "testcases"], capture_output=True, text=True
     )
     if agent.returncode != 0:
-        print("  агент завершился с ошибкой:", agent.stderr.strip()[-300:])
+        print("  agent failed:", agent.stderr.strip()[-300:])
         continue
 
     saved = f"runs/run_{i:02d}.md"
@@ -30,4 +30,4 @@ for i in range(1, N + 1):
         print("   FAIL")
         print(check.stdout)
 
-print(f"Итого: {passed} из {N} запусков прошли проверку")
+print(f"Total: {passed} of {N} runs passed the check")
